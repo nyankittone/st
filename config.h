@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "DepartureMono Nerd Font:pixelsize=27:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -54,18 +54,18 @@ int allowwindowops = 0;
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
 static double minlatency = 2;
-static double maxlatency = 33;
+static double maxlatency = 32;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 800;
+static unsigned int blinktimeout = 0;
 
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 4;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -74,7 +74,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "xterm-256color";
 
 /*
  * spaces per tab
@@ -96,32 +96,32 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	"#313244",
+	"#c64559",
+	"#6bb669",
+	"#f2b069",
+	"#667ed0",
+    "#a190d9",
+    "#70a8ca",
+    "#e0e0ee",
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+    "#45475a",
+    "#f38ba8",
+    "#a6e3a1",
+    "#f9e2af",
+    "#89b4fa",
+    "#f5c2e7",
+    "#89dceb",
+    "#fafaff",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	"#bac2de", /* default foreground colour */
+	"#1e1e2e", /* default background colour */
 };
 
 
@@ -193,8 +193,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+	{ TERMMOD,              XK_plus,       zoom,           {.f = +1} },
+	{ TERMMOD,              XK_underscore,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
