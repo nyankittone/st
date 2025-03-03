@@ -44,6 +44,12 @@ install: st
 	tic -sx st.info
 	@echo Please see the README file regarding the terminfo entry of st.
 
+localinstall: all
+	mkdir -p $(HOME)/.local/bin
+	cp -f st $(HOME)/.local/bin
+
+l: localinstall
+
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/st
 	rm -f $(DESTDIR)$(MANPREFIX)/man1/st.1
