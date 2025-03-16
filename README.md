@@ -28,19 +28,19 @@ Afterwards enter the following command to build and install st (if
 necessary as root):
 
 ```sh
-    make clean install
+make clean install
 ```
 
 Alternatively, this patched version of `st` allows you to install the program to your local user's
 bin directory, like so:
 
 ```sh
-    make localinstall
+make localinstall
 ```
 
 or:
 ```sh
-    make l
+make l
 ```
 
 This allows you to install the program without root privilages, but doing this will not install
