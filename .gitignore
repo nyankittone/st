@@ -2,4 +2,7 @@
 /st
 *.rej
 /*.diff
+/result
+/config.h
+/result/
 
